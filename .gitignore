@@ -1,0 +1,4 @@
+# ignore metadata
+.metadata
+.recommenders
+.DS_Store
