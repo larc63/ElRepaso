@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:600|Open+Sans+Condensed:300|Source+Code+Pro" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../common/style.css">
+    <link rel="stylesheet" type="text/css" href="../common/prism.css">
+    <script src="../common/prism.js"></script>
+    <title>Hello World</title>
+</head>
+
+<body>
+    <div class="main-body">
+        <h1>Tipos de datos y operadores</h1>
+        <div>
+            <span class="gradient_line"></span>
+        </div>
+
+        <h2>Variables</h2>
+        <p>Las variables o identificadores son los elementos de un programa sobre los cuales se realizan acciones, por ejemplo:
+            <pre><code class="language-cpp">int myVar = 0;</code></pre></p>
+        <p>Los identificadores (nombres de variables) solo pueden contener letras (mayúsculas o minúsculas) y el símbolo de guión bajo. El nombre solo puede comenzar con una letra o guión bajo, no puede empezar con un número. Es decir, <span class="code">miVar</span> sería un nombre válido pero <span class="code">3miVar</span> no. https://isocpp.org/files/papers/N3690.pdf</p>
+
+        <p>En su gran mayoría, los tipos de variables con los que vas a trabajar son de tipo numérico, ya sea porque representa una localidad en memoria, un caracter de texto o porque representa un número. Por esta razón vale la pena darle un repaso a su nombre y el rango que van a poder representar.</p>
+
+        <h2>Tipos numéricos</h2>
+        <table>
+            <tbody>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Bytes</th>
+                    <th>Alias</th>
+                    <th>Rango</th>
+                </tr>
+                <tr>
+                    <td align="center">int</td>
+                    <td align="center">4</td>
+                    <td align="center">signed</td>
+                    <td align="center">–2,147,483,648 a 2,147,483,647</td>
+                </tr>
+                <tr>
+                    <td align="center">unsigned int</td>
+                    <td align="center">4</td>
+                    <td align="center">unsigned</td>
+                    <td align="center">0 a 4,294,967,295</td>
+                </tr>
+                <tr>
+                    <td align="center">__int8</td>
+                    <td align="center">1</td>
+                    <td align="center">char</td>
+                    <td align="center">-128 a 127</td>
+                </tr>
+                <tr>
+                    <td align="center">unsigned __int8</td>
+                    <td align="center">1</td>
+                    <td align="center">unsigned char</td>
+                    <td align="center">0 a 255</td>
+                </tr>
+                <tr>
+                    <td align="center">__int16</td>
+                    <td align="center">2</td>
+                    <td align="center">short, short int, signed short int</td>
+                    <td align="center">–32,768 a 32,767</td>
+                </tr>
+                <tr>
+                    <td align="center">unsigned __int16</td>
+                    <td align="center">2</td>
+                    <td align="center">unsigned short, unsigned short int</td>
+                    <td align="center">0 a 65,535</td>
+                </tr>
+                <tr>
+                    <td align="center">__int32</td>
+                    <td align="center">4</td>
+                    <td align="center">signed, signed int, int</td>
+                    <td align="center">–2,147,483,648 a 2,147,483,647</td>
+                </tr>
+                <tr>
+                    <td align="center">unsigned __int32</td>
+                    <td align="center">4</td>
+                    <td align="center">unsigned, unsigned int</td>
+                    <td align="center">0 a 4,294,967,295</td>
+                </tr>
+                <tr>
+                    <td align="center">__int64</td>
+                    <td align="center">8</td>
+                    <td align="center">long long, signed long long</td>
+                    <td align="center">–9,223,372,036,854,775,808 a 9,223,372,036,854,775,807</td>
+                </tr>
+                <tr>
+                    <td align="center">unsigned __int64</td>
+                    <td align="center">8</td>
+                    <td align="center">unsigned long long</td>
+                    <td align="center">0 a 18,446,744,073,709,551,615</td>
+                </tr>
+                <tr>
+                    <td align="center">short</td>
+                    <td align="center">2</td>
+                    <td align="center">short int, signed short int</td>
+                    <td align="center">-32,768 a 32,767</td>
+                </tr>
+                <tr>
+                    <td align="center">unsigned short</td>
+                    <td align="center">2</td>
+                    <td align="center">unsigned short int</td>
+                    <td align="center">0 a 65,535</td>
+                </tr>
+                <tr>
+                    <td align="center">long</td>
+                    <td align="center">4</td>
+                    <td align="center">long int, signed long int</td>
+                    <td align="center">–2,147,483,648 a 2,147,483,647</td>
+                </tr>
+                <tr>
+                    <td align="center">unsigned long</td>
+                    <td align="center">4</td>
+                    <td align="center">unsigned long int</td>
+                    <td align="center">0 a 4,294,967,295</td>
+                </tr>
+                <tr>
+                    <td align="center">long long</td>
+                    <td align="center">8</td>
+                    <td align="center">n/a</td>
+                    <td align="center">–9,223,372,036,854,775,808 a 9,223,372,036,854,775,807</td>
+                </tr>
+                <tr>
+                    <td align="center">unsigned long long</td>
+                    <td align="center">8</td>
+                    <td align="center">n/a</td>
+                    <td align="center">0 a 18,446,744,073,709,551,615</td>
+                </tr>
+                <tr>
+                    <td align="center">float</td>
+                    <td align="center">4</td>
+                    <td align="center">n/a</td>
+                    <td align="center">3.4E +/- 38 (7 digitos)</td>
+                </tr>
+                <tr>
+                    <td align="center">double</td>
+                    <td align="center">8</td>
+                    <td align="center">n/a</td>
+                    <td align="center">1.7E +/- 308 (15 digitos)</td>
+                </tr>
+                <tr>
+                    <td align="center">long double</td>
+                    <td align="center">8</td>
+                    <td align="center">n/a</td>
+                    <td align="center">1.7E +/- 308 (15 digitos)</td>
+                </tr>
+            </tbody>
+        </table>
+    <p>Y ahora un poco de código para ejercitar un poco lo que dice esta tabla:</p>
+    <pre><code class="language-cpp, line-numbers">#include <iostream>
+
+int main()
+{
+    std::cout << "size of int, - " << sizeof(signed) << "\n";
+    std::cout << "size of unsigned int, - " << sizeof(unsigned) << "\n";
+    std::cout << "size of __int8, - " << sizeof(char) << "\n";
+    std::cout << "size of unsigned __int8, - " << sizeof(unsigned char) << "\n";
+    std::cout << "size of __int16, - " << sizeof(short int) << "\n";
+    std::cout << "size of unsigned __int16, - " << sizeof(unsigned short) << "\n";
+    std::cout << "size of __int32, - " << sizeof(signed) << "\n";
+    std::cout << "size of unsigned __int32, - " << sizeof(unsigned) << "\n";
+    std::cout << "size of __int64, - " << sizeof(signed long long) << "\n";
+    std::cout << "size of unsigned __int64, - " << sizeof(unsigned long long) << "\n";
+    std::cout << "size of short, - " << sizeof(signed short int) << "\n";
+    std::cout << "size of unsigned short, - " << sizeof(unsigned short int) << "\n";
+    std::cout << "size of long, - " << sizeof(signed long int) << "\n";
+    std::cout << "size of unsigned long, - " << sizeof(unsigned long int) << "\n";
+    std::cout << "size of long long, - " << sizeof(long long) << "\n";
+    std::cout << "size of float, - " << sizeof(float) << "\n";
+    std::cout << "size of double, - " << sizeof(double) << "\n";
+    std::cout << "size of long double, - " << sizeof(long double) << "\n";
+}</code></pre>
+    <p>Aquí la funcion <span class="code">sizeof()</span> se utiliza para calcular el tamaño de la variable en bytes</p>
+        <h2>Tipos con caracteres</h2>
+        <p>En el principio de los tiempos no existían estándares para representar caracteres de texto y uno de los primeros fue <a href="http://www.asciitable.com">ASCII</a> que trabajaba con 8 bits con signo y ahora el mundo de las computadoras está en camino a tener un estándar de 32 bits llamado unicode, éste estándar permite que podamos usar emoticons revueltos con texto normal.</p>
+        <table>
+            <tbody>
+                <tr>
+                    <th align="center"><b>Tipo</b></th>
+                    <th align="center"><b>Bytes</b></th>
+                    <th align="center"><b>Alias</b></th>
+                    <th align="center"><b>Rango</b></th>
+                </tr>
+                <tr>
+                    <td align="center">char</td>
+                    <td align="center">1</td>
+                    <td align="center">none</td>
+                    <td align="center">–128 a 127 por default 0 a 255 si se compila con /J</td>
+                </tr>
+                <tr>
+                    <td align="center">signed char</td>
+                    <td align="center">1</td>
+                    <td align="center">none</td>
+                    <td align="center">-128 a 127</td>
+                </tr>
+                <tr>
+                    <td align="center">unsigned char</td>
+                    <td align="center">1</td>
+                    <td align="center">none</td>
+                    <td align="center">0 a 255</td>
+                </tr>
+                <tr>
+                    <td align="center">wchar_t, char16_t, y char32_t</td>
+                    <td align="center">2 o 4</td>
+                    <td align="center">__wchar_t</td>
+                    <td align="center">0 a 65,535 (wchar_t &amp; char16_t), 0 a 4,294,967,295 (char32_t)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Operadores</h2>
+        <p>Y como en cualquier cosa, si tienes valores, vas a querer modificarlos, a continuación está una lista de los símbolos que se usan para manipular los valores de las variables.</p>
+        <table>
+            <tbody>
+                <tr>
+                    <th><b>Operator</b></th>
+                    <th><b>Descripción</b></th>
+                </tr>
+                <tr>
+                    <td align="center">+</td>
+                    <td>addition</td>
+                </tr>
+                <tr>
+                    <td align="center">-</td>
+                    <td>subtraction</td>
+                </tr>
+                <tr>
+                    <td align="center">*</td>
+                    <td>multiplication</td>
+                </tr>
+                <tr>
+                    <td align="center">/</td>
+                    <td>division</td>
+                </tr>
+                <tr>
+                    <td align="center">%</td>
+                    <td>modulo</td>
+                </tr>
+                <tr>
+                    <td align="center">+= (y += x)</td>
+                    <td>same as y = y + x</td>
+                </tr>
+                <tr>
+                    <td align="center">-= (y -= x)</td>
+                    <td>same as y = y - x</td>
+                </tr>
+                <tr>
+                    <td align="center">*= (y *= x)</td>
+                    <td>same as y = y * x</td>
+                </tr>
+                <tr>
+                    <td align="center">++</td>
+                    <td>increment by 1</td>
+                </tr>
+                <tr>
+                    <td align="center">--</td>
+                    <td>decrement by 1</td>
+                </tr>
+                <tr>
+                    <td align="center">==</td>
+                    <td>equal to</td>
+                </tr>
+                <tr>
+                    <td align="center">!=</td>
+                    <td>not equal to</td>
+                </tr>
+                <tr>
+                    <td align="center">&gt;</td>
+                    <td>greater than</td>
+                </tr>
+                <tr>
+                    <td align="center">&lt;</td>
+                    <td>less than</td>
+                </tr>
+                <tr>
+                    <td align="center">&gt;=</td>
+                    <td>greater than or equal to</td>
+                </tr>
+                <tr>
+                    <td align="center">&lt;=</td>
+                    <td>less than or equal to</td>
+                </tr>
+                <tr>
+                    <td align="center">&amp;&amp;</td>
+                    <td>logical AND</td>
+                </tr>
+                <tr>
+                    <td align="center">||</td>
+                    <td>logical OR</td>
+                </tr>
+                <tr>
+                    <td align="center">!</td>
+                    <td>logical NOT</td>
+                </tr>
+                <tr>
+                    <td align="center">^</td>
+                    <td>ASDF logical NOT</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
