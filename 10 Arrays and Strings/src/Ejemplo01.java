@@ -18,7 +18,7 @@ public class Ejemplo01 {
 		// find unique,
 		System.out.println(findPermutation("ABC", "CBA"));
 		System.out.println(findPermutation("ABC", "AAA"));
-		System.out.println(findPermutation(""));
+		//System.out.println(findPermutation(""));
 		
 	}
 
