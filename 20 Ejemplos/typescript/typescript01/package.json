@@ -1,0 +1,31 @@
+{
+  "name": "Typescript01",
+  "version": "1.0.0",
+  "description": "Typescript with gulp boilerplate",
+  "main": "index.html",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larc63/ElRepaso.git"
+  },
+  "author": "Luis A. Rodriguez-Condit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/larc63/ElRepaso/issues"
+  },
+  "homepage": "https://github.com/larc63/ElRepaso#readme",
+  "devDependencies": {
+    "browserify": "^14.5.0",
+    "event-stream": "^3.3.4",
+    "gulp": "^3.9.1",
+    "tsify": "^3.0.3",
+    "typescript": "^2.6.1",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.9.0"
+  }
+}

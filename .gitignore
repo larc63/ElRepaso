@@ -2,3 +2,6 @@
 .metadata
 .recommenders
 .DS_Store
+20 Ejemplos/angular/TSAngular/**
+node_modules/
+dist/
