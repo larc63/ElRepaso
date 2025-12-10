@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "gulp": "5.0.1"
+  },
+  "scripts": {
+    "watch": "gulp watchFiles"
+  }
+}

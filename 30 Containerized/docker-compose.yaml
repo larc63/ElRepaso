@@ -1,0 +1,17 @@
+services:
+  run_tests:
+    image: calculator
+    tty: true
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+      target: development
+    volumes:
+      - ./src:/app/src
+      - ./include:/app/include
+      - ./tests:/app/tests
+    working_dir: /app
+    entrypoint:
+      - npm
+      - run
+      - watch
