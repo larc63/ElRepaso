@@ -1,7 +1,8 @@
 var result;
 const NUM_OPERANDS = 2;
 const MULTIPLIER = 100;
-const OPERATOR_LIST = ['+', '-', '*', '/'];
+
+const OPERATOR_LIST = ['+', '-'];
 const populateOperation = () => {
     let operands = [];
     let operators = [];
@@ -42,15 +43,9 @@ const populateOperation = () => {
                 result *= Number(label.innerText); 
                 break;
             case '/':
-                let op1 = Number(lbl.innerText);
-                const op2 = Number(label.innerText); 
-                while(op1 > 10){
-                    op1 = (op1 / 10) >> 0;
-                }
-                lbl.innerText = op2 * op1;
-                label.innerText = op1;
-                result = op2;
+                result /= Number(label.innerText); 
                 break;
+                
                 default:
                     break;
         }
@@ -84,4 +79,4 @@ document.addEventListener('DOMContentLoaded',() => {
         populateOperation();
     })
     populateOperation();
-}); 
+});

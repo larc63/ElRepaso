@@ -11,7 +11,7 @@ services:
       - ./include:/app/include
       - ./tests:/app/tests
     working_dir: /app
-    entrypoint:
-      - npm
-      - run
-      - watch
+    # entrypoint:
+    #   - npm
+    #   - run
+    #   - watch
